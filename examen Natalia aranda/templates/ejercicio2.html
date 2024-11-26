@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Formulario de Inicio de Sesión</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/ejercicio1">Ejercicio 1</a>
+           <!-- <a href="/ejercicio2">Ejercicio 2</a>-->
+        </nav>
+    </header>
+    <div class="container">
+        <form method="POST">
+            <label for="usuario">Ingresa tu nombre:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Escribe tu usuario" required>
+
+            <label for="contraseña">Ingresa tu contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Escribe tu contraseña" required>
+
+            <button type="submit">Verificar</button>
+        </form>
+
+        <!-- Mostrar el mensaje si existe -->
+        {% if mensaje %}
+        <div class="result-container">
+            <h2>{{ mensaje }}</h2>
+        </div>
+        {% endif %}
+
+        <div class="return-button">
+            <a href="/">Volver al Menú</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
